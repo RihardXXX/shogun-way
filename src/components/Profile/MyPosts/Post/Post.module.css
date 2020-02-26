@@ -1,0 +1,15 @@
+.post {
+    color: #828282;
+    background: #f7f7f7;
+    border: 1px solid #c0cad5;
+    min-height: 120px;
+    padding: 5px 30px 5px 5px;
+    vertical-align: top;
+    margin: 0;
+    overflow: auto;
+    outline: 0;
+    line-height: 150%;
+    word-wrap: break-word;
+    cursor: text;
+    margin: 5px;
+}
