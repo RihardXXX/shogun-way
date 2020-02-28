@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Neucha|Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 .app-wrapper {
     display: grid; /* все потомки будут везти себя как грид элементы*/
     width: 960px;

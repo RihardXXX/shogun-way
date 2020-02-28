@@ -5,7 +5,7 @@
     border-radius: 4px;
     /*border-bottom: 3px solid rgb(74, 110, 120);*/
     /*border-right: 3px solid rgb(74, 110, 120);*/
-    font-family: 'Pacifico';
+    font-family: 'Anton';
     font-size: 20px;
     color: #285473;
     margin: 10px;
@@ -32,9 +32,11 @@
 
 .li a {
     color: rgb(74, 118, 120);
+    text-decoration: none;
 }
 
 .li a:hover {
     background-color: rgb(90, 110, 120);
     color: aliceblue;
+    border-radius: 4px;
 }
