@@ -4,8 +4,8 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={p.profile}>
-            <div>
+        <div>
+            <div className={p.profile}>
                 <img
                     src="https://vokrug.tv/pic/product/0/6/f/1/06f1bf67907cb2562c56e6dffe76a2f8.jpeg"
                     alt=""/>
