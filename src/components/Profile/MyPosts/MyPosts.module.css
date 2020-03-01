@@ -37,6 +37,7 @@
 .button {
     padding: 7px 16px 8px;
     margin-top: 3px;
+    margin-bottom: 3px;
     font-size: 12.5px;
     display: inline-block;
     zoom: 1;
