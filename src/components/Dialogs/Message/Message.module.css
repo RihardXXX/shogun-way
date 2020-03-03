@@ -1,0 +1,19 @@
+.me {
+    background: white;
+    color: #000;
+    border: 1px solid #c0cad5;
+    min-height: 100px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: top;
+    margin: 5px;
+    overflow: auto;
+    outline: 0;
+    line-height: 150%;
+    word-wrap: break-word;
+    cursor: text;
+}
+
+.me img {
+    height: 40px;
+    width: 40px;
+}
