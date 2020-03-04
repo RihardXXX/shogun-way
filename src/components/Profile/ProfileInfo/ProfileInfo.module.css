@@ -1,4 +1,20 @@
 
+.profile {
+    background: white;
+    color: #000;
+    border: 1px solid #c0cad5;
+    min-height: 120px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: top;
+    margin: 0;
+    overflow: auto;
+    outline: 0;
+    line-height: 150%;
+    word-wrap: break-word;
+    cursor: text;
+    margin: 5px;
+}
+
 .profile img {
     margin: 20px 20px;
     width: 150px;
@@ -9,4 +25,24 @@
 
 .right_block {
     float: right;
+    background: white;
+    color: #000;
+    border: 1px solid #c0cad5;
+    min-height: 170px;
+    width: 500px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: top;
+    overflow: auto;
+    outline: 0;
+    line-height: 150%;
+    word-wrap: break-word;
+    cursor: text;
+    margin: 5px;
+}
+
+.right_block hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color: #c0cad5; /* Цвет линии для остальных браузеров */
+    background-color: #c0cad5; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
 }

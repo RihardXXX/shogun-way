@@ -20,6 +20,33 @@
     margin: 5px;
 }
 
+
+.textarea {
+    background: #fff;
+    color: #000;
+    border: 1px solid #c0cad5;
+    min-height: 100px;
+    width: 94%;
+    padding: 5px 30px 5px 5px;
+    vertical-align: top;
+    margin: 5px;
+    overflow: auto;
+    outline: 0;
+    line-height: 150%;
+    word-wrap: break-word;
+    cursor: text;
+}
+
+hr {
+    margin-top: 20px;
+    margin-left: 5px;
+    border: none; /* Убираем границу для браузера Firefox */
+    color: #c0cad5; /* Цвет линии для остальных браузеров */
+    background-color: #c0cad5; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+}
+
+
 .button {
     padding: 7px 16px 8px;
     margin-top: 3px;

@@ -3,18 +3,22 @@ import p from './MyPosts.module.css'
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
+    let data_posts =[
+        {id: 1, message: 'Hello Guys', like: 10},
+        {id: 1, message: 'It is my first post', like: 4}
+    ]
     return (
-            <div>
-               Мои посты
-                <div className={p.new_post}>
-                    <textarea  className={p.textarea}></textarea>
-                    <button className={p.button}>отправить пост</button>
-                </div>
-                <div>
-                    <Post message='Hello Guys' likeCount='10' />
-                    <Post message='It is my first post' likeCount='2' />
-                </div>
+        <div>
+            <h3>Мои посты</h3>
+            <div className={p.new_post}>
+                <textarea className={p.textarea}></textarea>
+                <button className={p.button}>отправить пост</button>
             </div>
+            <div>
+                <Post message={data_posts[0].message} likeCount={data_posts[0].like}/>
+                <Post message={data_posts[1].message} likeCount={data_posts[1].like}/>
+            </div>
+        </div>
     )
 };
 
