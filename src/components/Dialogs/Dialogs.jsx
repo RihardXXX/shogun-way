@@ -9,30 +9,32 @@ let picture_me = "https://i.pinimg.com/originals/bc/b3/19/bcb319b817317a6416f9f7
 let picture_he = "https://www.crazytips.org/wp-content/uploads/2018/06/PicsArt_06-17-05.03.08.jpg"
 
 const Dialogs = (props) => {
-    let data_dialog = [
+    let dialogs = [
         {id: 1, name: "Саня", css: "activ"},
         {id: 2, name: "Виктор"},
         {id: 3, name: "Света"},
         {id: 4, name: "Семён"},
     ]
 
-    let data_message = [
+    let messages = [
         {id: 1, message: "Привет, как твои дела?", src: picture_me, acount: "I`am"},
         {id: 2, message: "нормально, а твои?", src: picture_he, acount: "HE"}
     ]
 
+    let dialog_elements = dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id} css={dialog.css}/>)
+
+    let messages_elements = messages.map(
+        message => <Message message={message.message} acount={message.acount} src={message.src}/>
+    )
+
     return (
         <div className={d.dialogs}>
             <div className={d.dialogItem}>
-                <Dialog name={data_dialog[0].name} id={data_dialog[0].id} css={data_dialog[0].css}/>
-                <Dialog name={data_dialog[1].name} id={data_dialog[1].id}/>
+                {dialog_elements}
             </div>
             <div className={d.messagesItem}>
                 <div className={d.message}>
-                    <Message message={data_message[0].message} acount={data_message[0].acount}
-                             src={data_message[0].src}/>
-                    <Message message={data_message[1].message} acount={data_message[1].acount}
-                             src={data_message[1].src}/>
+                    {messages_elements}
                     <hr/>
                     <div className={d.textarea}></div>
                     <button className={p.button}>отправить сообщение</button>
