@@ -4,16 +4,12 @@ import d from './Message.module.css'
 
 
 const Message = (props) => {
-    let message = props.message;
-    let css = d.me;
-    let src = props.src
-    let acount = props.acount
     return (
-        <div className={css}>
-            <img src={src} alt=""/>
-            {acount}
+        <div className={d.me}>
+            <img src={props.src} alt=""/>
+            {props.acount}
             <p>
-                {message}
+                {props.message}
             </p>
         </div>
     );

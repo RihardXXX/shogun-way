@@ -4,7 +4,6 @@ import d from  './Dialog.module.css'
 
 const Dialog = (props) => {
     let path = "/dialogs/" + props.id;
-    let name = props.name
     let css
     if (props.css == "activ"){
         css = d.dialog + ' ' + d.active
@@ -14,7 +13,7 @@ const Dialog = (props) => {
     }
     return (
         <div className={css}>
-            <NavLink to={path}>{name}</NavLink>
+            <NavLink to={path}>{props.name}</NavLink>
         </div>
     )
 }
