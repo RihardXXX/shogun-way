@@ -29,7 +29,7 @@
     color: #000;
     border: 1px solid #c0cad5;
     min-height: 170px;
-    width: 500px;
+    width: 480px;
     padding: 5px 5px 5px 5px;
     vertical-align: top;
     overflow: auto;
@@ -38,6 +38,7 @@
     word-wrap: break-word;
     cursor: text;
     margin: 5px;
+    display: inline-block;
 }
 
 .right_block hr {

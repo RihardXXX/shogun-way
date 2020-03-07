@@ -14,6 +14,23 @@
 }
 
 .me img {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
+}
+
+.avatar {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+}
+
+.text {
+    display: inline-block;
+    color: #000;
+    border: 1px solid #c0cad5;
+    min-height: 120px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: top;
+    margin: 5px;
+    width: 80%;
 }

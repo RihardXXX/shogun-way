@@ -9,21 +9,18 @@ import Settings from "./components/Settings/Settings";
 import Exit from "./components/Exit/Exit";
 
 
+
 const App = (props) => {
-    console.log(props.dialogs)
-    console.log(props.messages)
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    {/*<Route path='/dialogs' component={Dialogs}/>*/}
-                    {/*<Route path='/profile' component={Profile}/>*/}
-                    <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
-                    <Route path='/profile' render={() => <Profile data_posts={props.data_posts}/>}/>
-                    <Route path='/settings' component={Settings}/>
-                    <Route path='/exit' component={Exit}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogs_page}/>}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profile_page}/>}/>
+                    <Route path='/settings' render={Settings}/>
+                    <Route path='/exit' render={Exit}/>
                 </div>
             </div>
         </BrowserRouter>
