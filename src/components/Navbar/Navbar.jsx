@@ -3,7 +3,7 @@ import n from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <nav>
             <div  className={n.nav}>
@@ -14,7 +14,7 @@ const Navbar = () => {
                     <li className={n.li}><NavLink to="/exit">Выйти</NavLink></li>
                 </ol>
             </div>
-            <Friends/>
+            <Friends state={props.state}/>
         </nav>
     )
 };

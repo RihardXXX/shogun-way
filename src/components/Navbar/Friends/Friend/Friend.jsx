@@ -4,9 +4,8 @@ import css from "../Friends.module.css";
 const Friend = (props) => {
     return (
         <div className={css.friend}>
-            <img src="https://1.bp.blogspot.com/-NglqPxOBChE/UNxjZYY1wII/AAAAAAAAAP4/1s3H7FpgRJM/s1600/Brad+Pitt+1.jpg"
-                 alt=""/>
-            Brad Pitt
+            <img src={props.src} alt="WAW"/>
+            {props.name}
         </div>
     );
 };
