@@ -1,3 +1,5 @@
+import {rerenderTree} from "../render";
+
 let state = {
     profile_page: {
         data_posts: [
@@ -56,6 +58,7 @@ export let add_post = (post) => {
         like: 22,
     };
     state.profile_page.data_posts.push(new_post);
+    rerenderTree(state);
 }
 
 export default state;
