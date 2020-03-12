@@ -9,7 +9,6 @@ import Settings from "./components/Settings/Settings";
 import Exit from "./components/Exit/Exit";
 
 
-
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -17,14 +16,18 @@ const App = (props) => {
                 <Header/>
                 <Navbar state={props.state}/>
                 <div className='app-wrapper-content'>
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogs_page}/>}/>
-                    <Route path='/profile' render={() => <Profile state={props.state.profile_page} add_post={props.add_post}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogs_page}
+                                                                  update_messages_text={props.update_messages_text}
+                                                                  add_message={props.add_message}/>}/>
+                    <Route path='/profile'
+                           render={() => <Profile state={props.state.profile_page} add_post={props.add_post}
+                                                  update_post_text={props.update_post_text}/>}/>
                     <Route path='/settings' render={Settings}/>
                     <Route path='/exit' render={Exit}/>
                 </div>
             </div>
         </BrowserRouter>
-);
+    );
 }
 
 export default App;

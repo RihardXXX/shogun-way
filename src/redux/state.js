@@ -7,7 +7,8 @@ let state = {
             {id: 2, message: 'It is my first post', like: 4},
             {id: 3, message: 'You super guy', like: 22},
             {id: 4, message: 'How are you', like: 4},
-        ]
+        ],
+        new_post_text: 'please enter text',
     },
     dialogs_page: {
         dialogs: [
@@ -29,7 +30,8 @@ let state = {
                 src: "https://www.crazytips.org/wp-content/uploads/2018/06/PicsArt_06-17-05.03.08.jpg",
                 acount: "HE"
             }
-        ]
+        ],
+        new_messages_text: 'please send new message',
     },
     friends: {
         friends_list: [
@@ -49,16 +51,41 @@ let state = {
             },
         ]
     }
-}
+};
 
-export let add_post = (post) => {
+window.state = state;
+
+export let add_post = () => {
     let new_post = {
         id: 5,
-        message: post,
+        message: state.profile_page.new_post_text,
         like: 22,
     };
     state.profile_page.data_posts.push(new_post);
+    state.profile_page.new_post_text = '';
     rerenderTree(state);
-}
+};
+
+export let update_post_text = (new_text) => {
+    state.profile_page.new_post_text = new_text;
+    rerenderTree(state);
+};
+
+export let update_messages_text = (new_text) => {
+    state.dialogs_page.new_messages_text = new_text;
+    rerenderTree(state);
+};
+
+export let add_message = () => {
+    let new_message = {
+        id: 3,
+        message: state.dialogs_page.new_messages_text,
+        src: "https://i.pinimg.com/originals/bc/b3/19/bcb319b817317a6416f9f726bc96747f.jpg",
+        acount: "I`am"
+    }
+    state.dialogs_page.messages.push(new_message);
+    state.dialogs_page.new_messages_text = '';
+    rerenderTree();
+};
 
 export default state;
