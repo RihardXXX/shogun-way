@@ -63,44 +63,36 @@ let store = {
     getState() {
         return this._state;
     },
-    setState(text) {
-        this._state = text;
-        this._subscriber();
+    dispatch(action){ // { type: 'ADD_POST' }
+        if (action.type === 'ADD_POST'){
+            let new_post = {
+                id: 5,
+                message: this._state.profile_page.new_post_text,
+                like: 22,
+            };
+            this._state.profile_page.data_posts.push(new_post);
+            this._state.profile_page.new_post_text = '';
+            this._subscriber();
+        }else if (action.type === 'UPDATE_POST_TEXT'){
+            console.log(action.new_text); // test connect
+            this._state.profile_page.new_post_text = action.new_text;
+            this._subscriber();
+        }else if (action.type === 'ADD_MESSAGE'){
+            let new_message = {
+                id: 3,
+                message: this._state.dialogs_page.new_messages_text,
+                src: "https://i.pinimg.com/originals/bc/b3/19/bcb319b817317a6416f9f726bc96747f.jpg",
+                acount: "I`am"
+            };
+            this._state.dialogs_page.messages.push(new_message);
+            this._state.dialogs_page.new_messages_text = '';
+            this._subscriber();
+        }else if (action.type === 'UPDATE_MESSAGES_TEXT'){
+            console.log(action.new_text); // test connect
+            this._state.dialogs_page.new_messages_text = action.new_text;
+            this._subscriber();
+        }
     },
-    update_post_text(new_text){
-        console.log(new_text); // test connect
-        this._state.profile_page.new_post_text = new_text;
-        this._subscriber();
-    },
-    add_post(){
-        let new_post = {
-            id: 5,
-            message: this._state.profile_page.new_post_text,
-            like: 22,
-        };
-        this._state.profile_page.data_posts.push(new_post);
-        this._state.profile_page.new_post_text = '';
-        this._subscriber();
-    },
-    select_dialog(id){
-
-    },
-    update_messages_text(new_text){
-        console.log(new_text); // test connect
-        this._state.dialogs_page.new_messages_text = new_text;
-        this._subscriber();
-    },
-    add_message(){
-        let new_message = {
-            id: 3,
-            message: this._state.dialogs_page.new_messages_text,
-            src: "https://i.pinimg.com/originals/bc/b3/19/bcb319b817317a6416f9f726bc96747f.jpg",
-            acount: "I`am"
-        };
-        this._state.dialogs_page.messages.push(new_message);
-        this._state.dialogs_page.new_messages_text = '';
-        this._subscriber();
-    }
 };
 
 window.store = store;

@@ -9,13 +9,14 @@ const MyPosts = (props) => {
     let new_post_element = React.createRef();
 
     let add_post = () => {
-        props.store.add_post();
-        props.store.update_post_text('');
+        let action = { type: 'ADD_POST'};
+        props.dispatch(action);
     };
 
     const on_post_change = () => {
         let text = new_post_element.current.value;
-        props.store.update_post_text(text);
+        let action = { type: 'UPDATE_POST_TEXT', new_text: text};
+        props.dispatch(action);
     };
 
     return (
