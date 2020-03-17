@@ -4,6 +4,7 @@ import p from "../Profile/MyPosts/MyPosts.module.css";
 import {NavLink} from "react-router-dom";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
+import {add_message_action_creator, update_mesage_action_creator} from "../../redux/state";
 
 
 
@@ -17,13 +18,13 @@ const Dialogs = (props) => {
     let new_message = React.createRef();
 
     let add_message = () => {
-        let action = {type: 'ADD_MESSAGE'};
+        let action = add_message_action_creator();
         props.dispatch(action);
     };
 
     let update_mesage = () => {
         let new_text = new_message.current.value;
-        let action = {type: 'UPDATE_MESSAGES_TEXT', new_text: new_text};
+        let action = update_mesage_action_creator(new_text);
         props.dispatch(action);
     };
 

@@ -1,4 +1,7 @@
-
+const ADD_POST = 'ADD_POST';
+const UPDATE_POST_TEXT = 'UPDATE_POST_TEXT';
+const ADD_MESSAGE = 'ADD_MESSAGE';
+const UPDATE_MESSAGES_TEXT = 'UPDATE_MESSAGES_TEXT';
 
 let store = {
     _state: {
@@ -64,7 +67,7 @@ let store = {
         return this._state;
     },
     dispatch(action){ // { type: 'ADD_POST' }
-        if (action.type === 'ADD_POST'){
+        if (action.type === ADD_POST){
             let new_post = {
                 id: 5,
                 message: this._state.profile_page.new_post_text,
@@ -73,11 +76,11 @@ let store = {
             this._state.profile_page.data_posts.push(new_post);
             this._state.profile_page.new_post_text = '';
             this._subscriber();
-        }else if (action.type === 'UPDATE_POST_TEXT'){
+        }else if (action.type === UPDATE_POST_TEXT){
             console.log(action.new_text); // test connect
             this._state.profile_page.new_post_text = action.new_text;
             this._subscriber();
-        }else if (action.type === 'ADD_MESSAGE'){
+        }else if (action.type === ADD_MESSAGE){
             let new_message = {
                 id: 3,
                 message: this._state.dialogs_page.new_messages_text,
@@ -87,7 +90,7 @@ let store = {
             this._state.dialogs_page.messages.push(new_message);
             this._state.dialogs_page.new_messages_text = '';
             this._subscriber();
-        }else if (action.type === 'UPDATE_MESSAGES_TEXT'){
+        }else if (action.type === UPDATE_MESSAGES_TEXT){
             console.log(action.new_text); // test connect
             this._state.dialogs_page.new_messages_text = action.new_text;
             this._subscriber();
@@ -95,6 +98,13 @@ let store = {
     },
 };
 
-window.store = store;
+export const add_post_action_creator = () => ({type: ADD_POST});
 
+export const update_on_post_text_action_creator = (text) => ({type: UPDATE_POST_TEXT, new_text: text});
+
+export const add_message_action_creator = () => ({ type: 'ADD_MESSAGE'});
+
+export const update_mesage_action_creator = (new_text) => ({type: 'UPDATE_MESSAGES_TEXT', new_text: new_text});
+
+window.store = store;
 export default store;
