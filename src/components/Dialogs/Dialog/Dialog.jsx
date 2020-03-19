@@ -4,7 +4,7 @@ import d from  './Dialog.module.css'
 
 const Dialog = (props) => {
     let path = "/dialogs/" + props.id;
-    let css
+    let css;
     if (props.css == "activ"){
         css = d.dialog + ' ' + d.active
     }
