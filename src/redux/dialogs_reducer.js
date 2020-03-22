@@ -1,7 +1,31 @@
 const ADD_MESSAGE = 'ADD_MESSAGE';
 const UPDATE_MESSAGES_TEXT = 'UPDATE_MESSAGES_TEXT';
 
-const dialogs_reducer = (state, action) => {
+let initial_dialog_page = {
+    dialogs: [
+        {id: 1, name: "Саня", css: "activ"},
+        {id: 2, name: "Виктор"},
+        {id: 3, name: "Света"},
+        {id: 4, name: "Семён"},
+    ],
+    messages: [
+        {
+            id: 1,
+            message: "Привет, как твои дела?",
+            src: "https://i.pinimg.com/originals/bc/b3/19/bcb319b817317a6416f9f726bc96747f.jpg",
+            acount: "I`am"
+        },
+        {
+            id: 2,
+            message: "нормально, а твои?",
+            src: "https://www.crazytips.org/wp-content/uploads/2018/06/PicsArt_06-17-05.03.08.jpg",
+            acount: "HE"
+        }
+    ],
+    new_messages_text: 'please send new message',
+};
+
+const dialogs_reducer = (state=initial_dialog_page, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
             let new_message = {
